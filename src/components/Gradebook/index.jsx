@@ -552,7 +552,7 @@ export default class Gradebook extends React.Component {
               <span aria-hidden="true">{'<< '}</span> {'Back to Dashboard'}
             </a>
             <h1>Gradebook</h1>
-            <h3> {this.props.courseId}</h3>
+            <h2> {this.props.courseId}</h2>
             {this.props.areGradesFrozen &&
               <div className="alert alert-warning" role="alert" >
                 The grades for this course are now frozen. Editing of grades is no longer allowed.
@@ -565,7 +565,7 @@ export default class Gradebook extends React.Component {
             }
             <Tabs labels={this.getActiveTabs()}>
               <div>
-                <h4>Step 1: Filter the Grade Report</h4>
+                <h3>Step 1: Filter the Grade Report</h3>
                 <div className="d-flex justify-content-between" >
                   {this.props.showSpinner && <div className="spinner-overlay"><Icon className="fa fa-spinner fa-spin fa-5x color-black" /></div>}
                   <Button className="btn-primary align-self-start" onClick={toggleFilterDrawer}><FontAwesomeIcon icon={faFilter} /> Edit Filters</Button>
@@ -613,7 +613,7 @@ export default class Gradebook extends React.Component {
                     !this.state.isMaxCourseGradeFilterValid
                   }
                 />
-                <h4>Step 2: View or Modify Individual Grades</h4>
+                <h3>Step 2: View or Modify Individual Grades</h3>
                 {this.props.totalUsersCount ?
                   <div>
                     Showing
@@ -747,9 +747,9 @@ export default class Gradebook extends React.Component {
               </div>
               {this.props.showBulkManagement && (
                 <div>
-                  <h4>Use this feature by downloading a CSV for bulk management,
+                  <h3>Use this feature by downloading a CSV for bulk management,
                     overriding grades locally, and coming back here to upload.
-                  </h4>
+                  </h3>
                   <form ref={this.fileFormRef} action={this.props.gradeExportUrl} method="post">
                     <StatusAlert
                       alertType="danger"
